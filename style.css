@@ -122,6 +122,10 @@ nav a {
   margin-bottom: 10px;
 }
 
+li {
+  text-align: left;
+}
+
 @media (max-width: 768px) {
   nav {
     top: 20px; 
@@ -238,6 +242,10 @@ nav a {
   .contact form input[type="submit"] {
     padding: 15px 30px; 
     font-size: 16px; 
+  }
+
+  li {
+    text-align: left;
   }
 }
 
@@ -469,6 +477,11 @@ footer p {
       align-items: center;
       
     }
+
+    li {
+      text-align: left;
+    }
+    
   }
 }
 
@@ -609,7 +622,7 @@ nav a:hover {
 }
 
 .social-icons a:hover {
-  background-color: #ff564e;
+  background-color: white;
 }
 
 .contact-head {
@@ -629,5 +642,15 @@ nav a:hover {
 }
 
 .cta-link:hover {
-  color: #555555;
+  color: #0A66C2;
+}
+
+.cta-link2 {
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cta-link2:hover {
+  color: #E4405F;
 }
