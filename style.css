@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -14,20 +14,31 @@ header {
   color: #fff;
 }
 
+
 .content-set {
   display: flex;
   flex-direction: row;
 }
 
-.img-head img {
-  border-radius: 100%;
-  width: auto;
-  height: auto;
-  margin-top: 80px;
+
+.img-head {
+  margin: auto;
+  overflow: hidden;
+  max-width: 380px;
 }
 
+.img-head img {
+  display: block;
+  border-radius: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: top;
+  margin-top: 66px;
+}
+
+
 header h1 {
-  margin-top: 100px;
+  margin-top: 80px;
   font-size: 36px;
 }
 
@@ -37,7 +48,7 @@ header p {
 }
 
 header .btn {
-  margin-top: 50px;
+  margin-top: 0;
   padding: 20px 40px;
   background-color: #fff;
   color: #333;
@@ -58,20 +69,6 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-}
-
-nav {
-  position: absolute;
-  top: 50px;
-  right: 50px;
-  display: flex;
-}
-
-nav a {
-  margin-left: 30px; 
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
 }
 
 .services {
@@ -368,6 +365,7 @@ footer p {
   padding: 10px 20px;
   display: flex;
   justify-content: center;
+  background-image: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
 }
 
 .about-nav a {
@@ -394,7 +392,8 @@ footer p {
 
 @media (max-width: 768px) {
   .about-nav {
-    padding: 10px; 
+    padding: 10px;
+    background-image: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
   }
 
   .about-nav a {
@@ -409,19 +408,26 @@ footer p {
 
   @media (max-width: 480px) {
 
+    nav {
+      padding: 8px;
+      background-image: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    }
+
     nav a {
-      margin-left: 20px; 
+      /* margin-left: 20px;  */
       color: #fff;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 20px;
+      padding: 6px 10px;
     }
     .about-nav {
-      padding: 8px; 
+      padding: 8px;
+      background-image: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%); 
     }
 
     .about-nav a {
       padding: 6px 10px; 
-      font-size: 14px; 
+      font-size: 20px; 
     }
 
     .about h2 {
@@ -434,6 +440,7 @@ footer p {
       height: auto;
     }
 
+
     .img-head {
       margin: 0;
     }
@@ -443,7 +450,7 @@ footer p {
       border-radius: 100%;
       width: 160px;
       height: 170px;
-      margin-top: 80px;
+      margin-top: 100px;
     }
 
     .txt {
@@ -654,3 +661,82 @@ nav a:hover {
 .cta-link2:hover {
   color: #E4405F;
 }
+
+nav {
+  background-color: #333;
+  overflow: hidden;
+  transition: 0.5s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-image: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+
+nav a {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+nav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+nav .icon {
+  display: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+      flex-direction: column;
+      align-items: center;
+      background-image: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+  }
+
+  nav a:not(:first-child) {
+      display: none;
+  }
+
+  nav a.icon {
+      float: center;
+      display: block;
+  }
+
+  nav.responsive a {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+  }
+}
+
+/* Animation for the navigation items */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+nav a {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
