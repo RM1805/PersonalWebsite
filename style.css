@@ -722,7 +722,7 @@ nav .icon {
       margin-right: 300px;
       background-image: linear-gradient(to bottom, #1a8bbd 0%, #cc6699 100%);
       width: auto;
-      min-width: 632px;
+      min-width: 634px;
   }
 
   nav a {
@@ -777,7 +777,7 @@ nav a {
     color: #fff;
     padding: 20px;
     text-align: center;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;

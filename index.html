@@ -37,38 +37,6 @@
             </a>
         </nav>
 
-        <script>
-            function myFunction() {
-                var x = document.querySelector("nav");
-                if (x.className.includes("responsive")) {
-                    x.className = x.className.replace(" responsive", "");
-                } else {
-                    x.className += " responsive";
-                }
-            }
-
-            // Create a function to fetch and display the number of users
-            function displayUserCount() {
-                gtag('config', 'G-9D92Z5TLD3', {
-                    'send_page_view': false
-                });
-
-                gtag('event', 'page_view', {
-                    'send_to': 'G-9D92Z5TLD3',
-                    'event_callback': function () {
-                        var userCount = gtag('get', 'config', 'G-9D92Z5TLD3')._p[0].loaded[0].eventCount;
-                        document.getElementById('userCounter').innerHTML = 'You have been visited by ' + userCount + ' users!';
-                    }
-                });
-            }
-
-            // Call the function on page load
-            window.onload = function () {
-                displayUserCount();
-            };
-
-
-        </script>
 
         <div class="content-set">
             <div class="txt">
@@ -160,6 +128,46 @@
     <footer>
         <p>Copyright &copy; 2023 || All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function myFunction() {
+            var x = document.querySelector("nav");
+            if (x.className.includes("responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+
+        // Create a function to fetch and display the number of users
+        function displayUserCount() {
+            gtag('config', 'G-9D92Z5TLD3', {
+                'send_page_view': false
+            });
+
+            gtag('event', 'page_view', {
+                'send_to': 'G-9D92Z5TLD3',
+                'event_callback': function () {
+                    setTimeout(function () {
+                        var userCount = gtag('get', 'G-9D92Z5TLD3', 'event_count');
+                        if (userCount !== undefined) {
+                            document.getElementById('userCounter').innerHTML = 'You have been visited by ' + userCount + ' users!';
+                        } else {
+                            document.getElementById('userCounter').innerHTML = 'Unable to retrieve user count at the moment.';
+                        }
+                    }, 2000); // Adjust the delay (in milliseconds) based on your needs
+                }
+            });
+        }
+
+        // Call the function on page load
+        window.onload = function () {
+            displayUserCount();
+        };
+
+
+
+    </script>
 </body>
 
 </html>
