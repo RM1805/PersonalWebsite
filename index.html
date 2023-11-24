@@ -11,31 +11,31 @@
 </head>
 
 <body>
-    <nav class="about-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="https://drive.google.com/file/d/1fyzukAw8bu3TzOa0QIkAEMCVw0dXayo1/view?usp=drive_link" download
-            target="_blank">Resume</a>
-        <a href="services.html">Projects</a>
-        <a href="contact.html">Contact</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            &#9776;
-        </a>
-    </nav>
 
-    <script>
-        function myFunction() {
-            var x = document.querySelector("nav");
-            if (x.className.includes("responsive")) {
-                x.className = x.className.replace(" responsive", "");
-            } else {
-                x.className += " responsive";
-            }
-        }
-    </script>
     <header>
 
-
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="https://drive.google.com/file/d/1fyzukAw8bu3TzOa0QIkAEMCVw0dXayo1/view?usp=drive_link" download
+                target="_blank">Resume</a>
+            <a href="services.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                &#9776;
+            </a>
+        </nav>
+    
+        <script>
+            function myFunction() {
+                var x = document.querySelector("nav");
+                if (x.className.includes("responsive")) {
+                    x.className = x.className.replace(" responsive", "");
+                } else {
+                    x.className += " responsive";
+                }
+            }
+        </script>
 
         <div class="content-set">
             <div class="txt">
