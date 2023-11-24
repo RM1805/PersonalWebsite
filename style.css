@@ -722,7 +722,7 @@ nav .icon {
       margin-right: 300px;
       background-image: linear-gradient(to bottom, #1a8bbd 0%, #cc6699 100%);
       width: auto;
-      min-width: 630px;
+      min-width: 632px;
   }
 
   nav a {
@@ -771,3 +771,28 @@ nav a {
   .about h2 {
     margin-bottom: 25px;
   }
+
+  .user-counter {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.user-counter:before {
+    content: '\1F4E6'; /* Unicode character for a counter/clock icon */
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .user-counter {
+        font-size: 14px;
+    }
+}

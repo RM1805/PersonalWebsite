@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Add a favicon -->
     <title>RM Tech Labs</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9D92Z5TLD3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9D92Z5TLD3');
+    </script>
+
 </head>
 
 <body>
@@ -25,7 +36,7 @@
                 &#9776;
             </a>
         </nav>
-    
+
         <script>
             function myFunction() {
                 var x = document.querySelector("nav");
@@ -35,6 +46,28 @@
                     x.className += " responsive";
                 }
             }
+
+            // Create a function to fetch and display the number of users
+            function displayUserCount() {
+                gtag('config', 'G-9D92Z5TLD3', {
+                    'send_page_view': false
+                });
+
+                gtag('event', 'page_view', {
+                    'send_to': 'G-9D92Z5TLD3',
+                    'event_callback': function () {
+                        var userCount = gtag('get', 'config', 'G-9D92Z5TLD3')._p[0].loaded[0].eventCount;
+                        document.getElementById('userCounter').innerHTML = 'You have been visited by ' + userCount + ' users!';
+                    }
+                });
+            }
+
+            // Call the function on page load
+            window.onload = function () {
+                displayUserCount();
+            };
+
+
         </script>
 
         <div class="content-set">
@@ -119,6 +152,10 @@
             <button type="submit">Submit</button>
         </form>
     </section>
+
+    <div class="user-counter" id="userCounter">
+        Loading user count...
+    </div>
 
     <footer>
         <p>Copyright &copy; 2023 || All Rights Reserved.</p>
