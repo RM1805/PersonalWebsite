@@ -139,33 +139,36 @@
             }
         }
 
-        // Create a function to fetch and display the number of users
         function displayUserCount() {
-            gtag('config', 'G-9D92Z5TLD3', {
-                'send_page_view': false
-            });
 
-            gtag('event', 'page_view', {
-                'send_to': 'G-9D92Z5TLD3',
-                'event_callback': function () {
-                    setTimeout(function () {
-                        var userCount = gtag('get', 'G-9D92Z5TLD3', 'event_count');
-                        if (userCount !== undefined) {
-                            document.getElementById('userCounter').innerHTML = 'You have been visited by ' + userCount + ' users!';
-                        } else {
-                            document.getElementById('userCounter').innerHTML = 'Unable to retrieve user count at the moment.';
-                        }
-                    }, 2000); // Adjust the delay (in milliseconds) based on your needs
+    const measurementId = 'G-9D92Z5TLD3';
+
+    gtag('config', measurementId, {
+        send_page_view: false,
+    });
+
+    gtag('event', 'page_view', {
+        send_to: measurementId,
+        event_callback: function () {
+            setTimeout(function () {
+                const userCount = gtag('get', measurementId, 'user_count');
+
+                if (userCount !== undefined) {
+                    document.getElementById('userCounter').innerHTML = `
+                        ${userCount} users visited this site till now!
+                    `;
+                } else {
+                    document.getElementById('userCounter').innerHTML =
+                        'Unable to retrieve the number of visitors at the moment.';
                 }
-            });
-        }
+            }, 5000);
+        },
+    });
+}
 
-        // Call the function on page load
-        window.onload = function () {
-            displayUserCount();
-        };
-
-
+window.onload = function () {
+    displayUserCount();
+};
 
     </script>
 </body>
