@@ -741,7 +741,6 @@ nav .icon {
   }
 }
 
-/* Animation for the navigation items */
 @keyframes fadeIn {
   from {
       opacity: 0;
@@ -772,27 +771,42 @@ nav a {
     margin-bottom: 25px;
   }
 
-  .user-counter {
-    background-color: #3498db;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+.container-3 {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background-color: #007bff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  color: #fff;
 }
 
-.user-counter:before {
-    content: '\1F4E6'; /* Unicode character for a counter/clock icon */
-    font-size: 24px;
-    margin-right: 10px;
+.container-3 p {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
-@media screen and (max-width: 600px) {
-    .user-counter {
-        font-size: 14px;
-    }
+span {
+  background-color: #007bff;
+  border-radius: 100%;
+  object-fit: cover;
+  color: black;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.container-3:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.container-3::before {
+  content: '';
+  display: block;
+  border-top: 3px solid #fff;
+  margin-bottom: 20px;
+}
+
+.container-3 {
+  background: linear-gradient(45deg, #0056b3, #007bff);
 }

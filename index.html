@@ -120,10 +120,10 @@
             <button type="submit">Submit</button>
         </form>
     </section>
-
-    <div class="user-counter" id="userCounter">
-        Loading user count...
+    <div class="container-3">
+        <p>Thank you for visiting! Our site has been viewed by <span id="visitorCount">0</span> visitors.</p>
     </div>
+
 
     <footer>
         <p>Copyright &copy; 2023 || All Rights Reserved.</p>
@@ -139,36 +139,41 @@
             }
         }
 
-        function displayUserCount() {
+        document.addEventListener('DOMContentLoaded', function () {
+            let userId = getCookie('userId');
 
-    const measurementId = 'G-9D92Z5TLD3';
+            if (!userId) {
+                userId = generateUniqueId();
 
-    gtag('config', measurementId, {
-        send_page_view: false,
-    });
+                setCookie('userId', userId, 365);
 
-    gtag('event', 'page_view', {
-        send_to: measurementId,
-        event_callback: function () {
-            setTimeout(function () {
-                const userCount = gtag('get', measurementId, 'user_count');
+                let visitorCount = getCookie('visitorCount');
+                visitorCount = (visitorCount === null || isNaN(visitorCount)) ? 1 : parseInt(visitorCount) + 1;
 
-                if (userCount !== undefined) {
-                    document.getElementById('userCounter').innerHTML = `
-                        ${userCount} users visited this site till now!
-                    `;
-                } else {
-                    document.getElementById('userCounter').innerHTML =
-                        'Unable to retrieve the number of visitors at the moment.';
-                }
-            }, 5000);
-        },
-    });
-}
+                document.getElementById('visitorCount').innerText = visitorCount;
+                setCookie('visitorCount', visitorCount, 365);
+            } else {
+                let visitorCount = getCookie('visitorCount');
+                document.getElementById('visitorCount').innerText = (visitorCount === null || isNaN(visitorCount)) ? 0 : visitorCount;
+            }
+        });
 
-window.onload = function () {
-    displayUserCount();
-};
+        function generateUniqueId() {
+            return 'user_' + Date.now() + Math.random().toString(36).substring(7);
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = `expires=${date.toUTCString()}`;
+            document.cookie = `${name}=${value}; ${expires}; path=/`;
+        }
 
     </script>
 </body>
