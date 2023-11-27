@@ -9,16 +9,6 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Add a favicon -->
     <title>RM Tech Labs</title>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9D92Z5TLD3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-9D92Z5TLD3');
-    </script>
-
 </head>
 
 <body>
@@ -140,50 +130,50 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-    let userId = getCookie('userId');
-    let isNewUser = false;
+            let userId = getCookie('userId');
+            let isNewUser = false;
 
-    if (!userId) {
-        userId = generateUniqueId();
-        setCookie('userId', userId, 365);
-        isNewUser = true;
-    }
+            if (!userId) {
+                userId = generateUniqueId();
+                setCookie('userId', userId, 365);
+                isNewUser = true;
+            }
 
-    let visitorCount = getCookie('visitorCount');
-    if (visitorCount === null || isNaN(visitorCount)) {
-        visitorCount = 43; // Set the initial value to 43
-    } else {
-        visitorCount = parseInt(visitorCount);
-    }
+            let visitorCount = getCookie('visitorCount');
+            if (visitorCount === null || isNaN(visitorCount)) {
+                visitorCount = 43; // Set the initial value to 43
+            } else {
+                visitorCount = parseInt(visitorCount);
+            }
 
-    console.log('userId:', userId);
-    console.log('isNewUser:', isNewUser);
-    console.log('visitorCount:', visitorCount);
+            console.log('userId:', userId);
+            console.log('isNewUser:', isNewUser);
+            console.log('visitorCount:', visitorCount);
 
-    if (isNewUser) {
-        document.getElementById('visitorCount').innerText = visitorCount;
-        setCookie('visitorCount', visitorCount + 1, 365);
-    } else {
-        document.getElementById('visitorCount').innerText = visitorCount;
-    }
-});
+            if (isNewUser) {
+                document.getElementById('visitorCount').innerText = visitorCount;
+                setCookie('visitorCount', visitorCount + 1, 365);
+            } else {
+                document.getElementById('visitorCount').innerText = visitorCount;
+            }
+        });
 
-function generateUniqueId() {
-    return 'user_' + Date.now() + Math.random().toString(36).substring(7);
-}
+        function generateUniqueId() {
+            return 'user_' + Date.now() + Math.random().toString(36).substring(7);
+        }
 
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-}
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
 
-function setCookie(name, value, days) {
-    const date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    const expires = `expires=${date.toUTCString()}`;
-    document.cookie = `${name}=${value}; ${expires}; path=/`;
-}
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = `expires=${date.toUTCString()}`;
+            document.cookie = `${name}=${value}; ${expires}; path=/`;
+        }
 
 
 
