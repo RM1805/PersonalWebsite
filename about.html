@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RM Tech Labs - About</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
     <nav>
@@ -14,40 +16,56 @@
       <a href="services.html">Projects</a>
       <a href="contact.html">Contact</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          &#9776;
+        &#9776;
       </a>
-  </nav>
-  
-  <script>
-        function myFunction() {
-            var x = document.querySelector("nav");
-            if (x.className.includes("responsive")) {
-                x.className = x.className.replace(" responsive", "");
-            } else {
-                x.className += " responsive";
-            }
+    </nav>
+
+    <script>
+      function myFunction() {
+        var x = document.querySelector("nav");
+        if (x.className.includes("responsive")) {
+          x.className = x.className.replace(" responsive", "");
+        } else {
+          x.className += " responsive";
         }
-  </script>
+      }
+    </script>
   </header>
 
-  
-  
+
+
   <main>
     <section class="about">
       <div class="content">
-        <h2>About Me</h2>
-        <p>
-          Hello, I'm Rishi Mishra, a highly motivated and adaptable full-stack web developer with a dedication to delivering exceptional web applications. My expertise spans both front-end and back-end development, allowing me to create user-friendly, efficient, and visually stunning web experiences.
-        </p>
-        <p>
-          Proficient in a wide range of technologies, including HTML, CSS, JavaScript, Node.js, and MongoDB, I am well-equipped to build cross-platform applications using React Native. My constant pursuit of knowledge ensures that I always incorporate cutting-edge tools and techniques into my projects.
-        </p>
-        <p>
-          Over the course of my career, I have successfully contributed to diverse projects, from e-commerce platforms to social media networks. I prioritize responsive design, optimal user experience, and robust application security in all my endeavors.
-        </p>
-        <p>
-          Passionate about turning ideas into functional and scalable web solutions, I go above and beyond to exceed client expectations and deliver top-notch results. I thrive in collaborative environments, and my strong problem-solving skills enable me to tackle complex challenges with confidence.
-        </p>
+        <div class="text">
+          <h2>About Me</h2>
+          <p>
+            Hello, I'm Rishi Mishra, a highly motivated and adaptable full-stack web developer with a dedication to
+            delivering exceptional web applications. My expertise spans both front-end and back-end development,
+            allowing me to create user-friendly, efficient, and visually stunning web experiences.
+          </p>
+          <p>
+            Proficient in a wide range of technologies, including HTML, CSS, JavaScript, Node.js, and MongoDB, I am
+            well-equipped to build cross-platform applications using React Native. My constant pursuit of knowledge
+            ensures that I always incorporate cutting-edge tools and techniques into my projects.
+          </p>
+          <p>
+            Over the course of my career, I have successfully contributed to diverse projects, from e-commerce platforms
+            to social media networks. I prioritize responsive design, optimal user experience, and robust application
+            security in all my endeavors.
+          </p>
+          <p>
+            Passionate about turning ideas into functional and scalable web solutions, I go above and beyond to exceed
+            client expectations and deliver top-notch results. I thrive in collaborative environments, and my strong
+            problem-solving skills enable me to tackle complex challenges with confidence.
+          </p>
+        </div>
+        <div class="image">
+
+          <img
+            src="https://www.totvs.com/wp-content/uploads/2021/11/como-se-tornar-um-programador-mobile.jpg"
+            alt="">
+        </div>
       </div>
     </section>
 
@@ -57,4 +75,5 @@
     <p>Copyright &copy; 2023 || All Rights Reserved.</p>
   </footer>
 </body>
+
 </html>
