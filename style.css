@@ -32,7 +32,7 @@ header {
   border-radius: 100%;
   width: 100%;
   height: auto;
-  object-fit: top;
+  object-fit: cover;
   margin-top: 66px;
 }
 
