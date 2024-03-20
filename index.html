@@ -120,6 +120,16 @@
     </footer>
 
     <script>
+  
+        function myFunction() {
+        var x = document.querySelector("nav");
+        if (x.className.includes("responsive")) {
+            x.className = x.className.replace(" responsive", "");
+        } else {
+            x.className += " responsive";
+        }
+        }
+          
         document.addEventListener('DOMContentLoaded', function () {
             let userId = getCookie('userId');
             let isNewUser = false;
